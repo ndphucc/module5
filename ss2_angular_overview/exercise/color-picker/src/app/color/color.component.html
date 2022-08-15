@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>RGB</h1>
+  <div class="row">
+    <table>
+      <tr>
+        <th>Red</th>
+        <th>Green</th>
+        <th>Blue</th>
+      </tr>
+      <tr>
+        <td>{{color.red}}</td>
+        <td>{{color.green}}</td>
+        <td>{{color.blue}}</td>
+      </tr>
+      <tr>
+        <td><input type="range" min="0" max="255" (change)="showColor()" [(ngModel)]="color.red"></td>
+        <td><input type="range" min="0" max="255" (change)="showColor()" [(ngModel)]="color.green"></td>
+        <td><input type="range" min="0" max="255" (change)="showColor()" [(ngModel)]="color.blue"></td>
+      </tr>
+    </table>
+  </div>
+  <div style="width: 100%;height: 50px" [style.background-color]="background">
+  </div>
+</div>

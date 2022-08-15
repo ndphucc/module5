@@ -1,1 +1,64 @@
-<p>calculator works!</p>
+<h1>Máy tính đơn giản</h1>
+<table>
+  <tr>
+    <td colspan="4">
+      <input type="text" [value]="textInput">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="showInput('7')">7</button>
+    </td>
+    <td>
+      <button (click)="showInput('8')">8</button>
+    </td>
+    <td>
+      <button (click)="showInput('9')">9</button>
+    </td>
+    <td>
+      <button (click)="showInput('/')">/</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="showInput('4')">4</button>
+    </td>
+    <td>
+      <button (click)="showInput('5')">5</button>
+    </td>
+    <td>
+      <button (click)="showInput('6')">6</button>
+    </td>
+    <td>
+      <button (click)="showInput('*')">x</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="showInput('1')">1</button>
+    </td>
+    <td>
+      <button (click)="showInput('2')">2</button>
+    </td>
+    <td>
+      <button (click)="showInput('3')">3</button>
+    </td>
+    <td>
+      <button (click)="showInput('-')">-</button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button (click)="showInput('0')">0</button>
+    </td>
+    <td>
+      <button (click)="textInput=''">C</button>
+    </td>
+    <td>
+      <button (click)="showResult()">=</button>
+    </td>
+    <td>
+      <button (click)="showInput('+')">+</button>
+    </td>
+  </tr>
+</table>

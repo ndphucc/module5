@@ -7,6 +7,9 @@ function fibonacci(numberFirst: number, numberSecond: number, amount: number): A
         return arr
     }
 }
-for (let number of fibonacci(0,1,5)){
-    console.log(number);
+
+let sum = 0;
+for (let number of fibonacci(0, 1, 5)) {
+    sum += number;
 }
+console.log(sum);
