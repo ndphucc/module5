@@ -38,7 +38,7 @@ const routes: Routes = [
     FacilityListComponent,
     FacilityCreateComponent,
     FacilityEditComponent,
-    ContractComponent
+    ContractComponent,
   ],
   imports: [
     BrowserModule,

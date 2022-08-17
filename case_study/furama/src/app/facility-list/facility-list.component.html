@@ -1,4 +1,3 @@
-<app-header></app-header>
 <div class="container-fluid">
   <div class="row ">
     <div class="col-12 bg-img position-relative">
@@ -8,179 +7,34 @@
   </div>
   <div class="row">
     <div class="col-1 pt-3">
-      <a href="/facilityAdd">
+      <a routerLink="/facilityAdd">
         <button class="btn btn-primary">Create</button>
       </a>
     </div>
   </div>
   <div class="row container" style="margin: 50px auto">
     <div class="row p-3">
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="/facilityEdit" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger"data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
+      <ng-container *ngFor="let item of facilityList;let i = index">
+        <div class="col-4 d-flex justify-content-center" style="margin-bottom: 20px">
+          <div class="card" style="width: 18rem;">
+            <img width="285px" height="195px"
+              [src]="item.img"
+              class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item.name}}</h5>
+              <p class="card-text">{{item.area}}</p>
+              <div class="row">
+                <div class="col-6 d-flex justify-content-end">
+                  <a href="/facilityEdit" class="btn btn-primary">Edit</a>
+                </div>
+                <div class="col-6">
+                  <a href="#" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal">Delete</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row p-3">
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row p-3">
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-4 d-flex justify-content-center">
-        <div class="card" style="width: 18rem;">
-          <img src="https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768"
-               class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">OCEAN SUITE</h5>
-            <p class="card-text">Room size 85.8m</p>
-            <div class="row">
-              <div class="col-6 d-flex justify-content-end">
-                <a href="#" class="btn btn-primary">Edit</a>
-              </div>
-              <div class="col-6">
-                <a href="#" class="btn btn-danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </ng-container>
     </div>
   </div>
   <div class="row">
@@ -201,10 +55,6 @@
     </div>
   </div>
 </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
 
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -224,4 +74,3 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>

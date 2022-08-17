@@ -6,7 +6,7 @@ import {IRatingUnit} from '../i-rating-unit';
   templateUrl: './rating-bar.component.html',
   styleUrls: ['./rating-bar.component.css']
 })
-export class RatingBarComponent implements OnInit {
+export class RatingBarComponent implements OnInit, OnChanges {
 
   @Input()
   max = 10;
@@ -20,7 +20,8 @@ export class RatingBarComponent implements OnInit {
 
   ratingUnits: Array<IRatingUnit> = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnChanges(changes: SimpleChanges) {
     if ('max' in changes) {
@@ -48,9 +49,11 @@ export class RatingBarComponent implements OnInit {
     this.ratingUnits.forEach((item, idx) => item.active = idx < this.ratingValue);
     this.rateChange.emit(this.ratingValue);
   }
+
   enter(index) {
     this.ratingUnits.forEach((item, idx) => item.active = idx <= index);
   }
+
   reset() {
     this.ratingUnits.forEach((item, idx) => item.active = idx < this.ratingValue);
   }

@@ -1,9 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {TimelinesComponent} from './timelines/timelines.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'timelines',
+    component: TimelinesComponent
 
+  }
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

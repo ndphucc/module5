@@ -1,16 +1,16 @@
-<app-header></app-header>
-<div class="container">
+<div class="container-fluid">
   <div class="row ">
     <h3 class="d-flex justify-content-center">Customer</h3>
   </div>
   <div class="row">
     <div class="col-1 pt-3">
-      <a href="/customerAdd">
+      <a routerLink="/customerAdd">
         <button class="btn btn-primary">Create</button>
       </a>
     </div>
   </div>
-  <table class="table">
+  <table class="table table-info">
+    <thead>
     <tr>
       <th>Name</th>
       <th>Customer type</th>
@@ -23,42 +23,28 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr>
-      <td>Nguyên Văn A</td>
-      <td>Diamond</td>
-      <td>04/08/2002</td>
-      <td>Nam</td>
-      <td>300090</td>
-      <td>100909</td>
-      <td>email@gmail.com</td>
-      <td>Đà Nẵng</td>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of customerList">
+      <td>{{item.name}}</td>
+      <td>{{item.customerType}}</td>
+      <td>{{item.birthDay}}</td>
+      <td [textContent]="item.gender?'Nam':'Nữ'"></td>
+      <td>{{item.idCard}}</td>
+      <td>{{item.numberPhone}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.address}}</td>
       <td><a href="/customerEdit">
         <button class="btn btn-success">Edit</button>
       </a></td>
       <td>
-        <button class="btn btn-danger" style="background-color: #dc3545" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <button class="btn btn-danger" style="background-color: #dc3545" data-bs-toggle="modal"
+                data-bs-target="#exampleModal">
           Delete
         </button>
       </td>
     </tr>
-    <tr>
-      <td>Nguyên Văn A</td>
-      <td>Diamond</td>
-      <td>04/08/2002</td>
-      <td>Nam</td>
-      <td>300090</td>
-      <td>100909</td>
-      <td>email@gmail.com</td>
-      <td>Đà Nẵng</td>
-      <td><a>
-        <button class="btn btn-success">Edit</button>
-      </a></td>
-      <td>
-        <button type="button" style="background-color: #dc3545" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          Delete
-        </button>
-      </td>
-    </tr>
+    </tbody>
   </table>
   <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -79,4 +65,4 @@
     </div>
   </div>
 </div>
-<app-footer></app-footer>
+
