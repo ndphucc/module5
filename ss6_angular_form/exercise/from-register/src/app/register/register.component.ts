@@ -10,11 +10,12 @@ import {min} from 'rxjs/operators';
 })
 export class RegisterComponent implements OnInit {
   formGroup: FormGroup;
-  countryList = [
-    'Hà Nội', 'Đà Nẵng', 'Sài Gòn'
-  ];
+  countryList: string[];
 
   constructor(private fb: FormBuilder) {
+    this.countryList = [
+      'Hà Nội', 'Đà Nẵng', 'Sài Gòn'
+    ];
   }
 
   ngOnInit() {
