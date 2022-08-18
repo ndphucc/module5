@@ -9,8 +9,10 @@ import {min} from 'rxjs/operators';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  account: Account;
-  formGroup = new FormGroup({});
+  formGroup: FormGroup;
+  countryList = [
+    'Hà Nội', 'Đà Nẵng', 'Sài Gòn'
+  ];
 
   constructor(private fb: FormBuilder) {
   }
@@ -18,12 +20,14 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.fb.group({
       email: new FormControl('', Validators.email),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', this.regexPass),
+      pCpGroup: this.fb.group({
+        password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+        confirmPassword: new FormControl(''),
+      }, this.regexPass),
       country: new FormControl(),
       age: new FormControl('', this.regexAge),
-      gender: new FormControl(),
-      phone: new FormControl()
+      gender: new FormControl('', Validators.required),
+      phone: new FormControl('', this.phoneValidator)
     });
   }
 
@@ -39,22 +43,22 @@ export class RegisterComponent implements OnInit {
   }
 
   regexPass(control: AbstractControl) {
-    if (control.value === this.formGroup.get('password')) {
+    if (control.value.password === control.value.confirmPassword) {
       return null;
     } else {
       return {confirmPassword: true};
     }
   }
 
+  phoneValidator(form: AbstractControl) {
+    const phoneRegex = new RegExp(/^\\+84\\d{9,10}$/);
+    if (form.value.test(phoneRegex)) {
+      return null;
+    } else {
+      return {phoneRegex: true};
+    }
+  }
+
   onSubmit() {
-    this.formGroup = this.fb.group({
-      email: new FormControl('', Validators.email),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
-      confirmPassword: new FormControl('', this.regexPass),
-      country: new FormControl(),
-      age: new FormControl('', this.regexAge),
-      gender: new FormControl(),
-      phone: new FormControl()
-    });
   }
 }

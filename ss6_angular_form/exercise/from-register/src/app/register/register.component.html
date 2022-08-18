@@ -4,39 +4,54 @@
     <tr>
       <th>Email:</th>
       <td><input type="text" formControlName="email"></td>
-    </tr>
-    <tr>
-      <th>Password:</th>
-      <td><input type="text" formControlName="password"></td>
-    </tr>
-    <tr>
-      <th>Confirm password:</th>
-      <td><input type="text" formControlName="confirmPassword"></td>
-      <td *ngIf="formGroup.get('confirmPassword').errors && formGroup.get('confirmPassword').touched">
-        pass
+      <td *ngIf="formGroup.get('email').errors && formGroup.get('email').touched">
+        Không đúng định dạng email
       </td>
     </tr>
+    <ng-container formControlName="pCpGroup">
+      <tr>
+        <th>Password:</th>
+        <td><input type="text" formControlName="password"></td>
+      </tr>
+      <tr>
+        <th>Confirm password:</th>
+        <td><input type="text"></td>
+        <td *ngIf="formGroup.get('pCpGroup').errors && formGroup.get('pCpGroup').touched">
+          Mật Khẩu không trùng
+        </td>
+      </tr>
+    </ng-container>
     <tr>
       <th>Country:</th>
-      <td><input type="text" formControlName="country"></td>
+      <td><select formControlName="country">
+        <option *ngFor="let item of countryList" [value]="item">{{item}}</option>
+      </select></td>
+      <td *ngIf="formGroup.get('country').errors && formGroup.get('country').touched">
+        Không được bỏ trống
+      </td>
     </tr>
     <tr>
       <th>Age:</th>
       <td><input type="text" formControlName="age"></td>
-      <td *ngIf="formGroup.get('age').errors && formGroup.get('age').touched">
-        age must be more than 18
+      <td style="color: red" *ngIf="formGroup.get('age').errors && formGroup.get('age').touched">
+        Tuổi phải lớn hơn 18
       </td>
-
     </tr>
     <tr>
       <th>Gender:</th>
       <td><input type="radio" value="male" name="gender" formControlName="gender"> Male
         <input type="radio" value="female" name="gender" formControlName="gender"> Female
       </td>
+      <td *ngIf="formGroup.get('gender').errors && formGroup.get('gender').touched">
+        Không được bỏ trống
+      </td>
     </tr>
     <tr>
       <th>Phone:</th>
       <td><input type="text" formControlName="phone"></td>
+      <td *ngIf="formGroup.get('phone').errors && formGroup.get('phone').touched">
+        Số điện thoại không hợp lệ
+      </td>
     </tr>
     <tr>
       <td>

@@ -13,6 +13,7 @@ import {FacilityListComponent} from './facility-list/facility-list.component';
 import {FacilityCreateComponent} from './facility-create/facility-create.component';
 import {FacilityEditComponent} from './facility-edit/facility-edit.component';
 import {ContractComponent} from './contract/contract.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -43,7 +44,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,9 +2,9 @@ export interface Customer {
   id?:number;
   name?:string;
   birthDay?:string;
-  gender?:boolean;
+  gender?:string;
   idCard?:string;
-  numberPhone?:string;
+  phoneNumber?:string;
   email?:string;
   customerType?:string;
   address?:string;

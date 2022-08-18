@@ -1,0 +1,19 @@
+<h3>register</h3>
+<form action="" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <th>Email:</th>
+      <td><input type="text" formControlName="email"></td>
+      <td *ngIf="formGroup.get('email').errors && formGroup.get('email').touched">
+        Không đúng định dạng email
+      </td>
+    </tr>
+    <tr>
+      <th>Password:</th>
+      <td><input type="text" formControlName="password"></td>
+      <td *ngIf="formGroup.get('password').errors && formGroup.get('password').touched">
+        Mật Khẩu không trùng
+      </td>
+    </tr>
+  </table>
+</form>

@@ -1,17 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Contract} from "../model/contract";
 import {Customer} from "../model/customer";
 import {Facility} from "../model/Facility";
+import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-contract',
   templateUrl: './contract.component.html',
   styleUrls: ['./contract.component.css']
 })
-export class ContractComponent implements OnInit {
+export class ContractComponent implements OnInit, OnChanges {
   contractList: Contract[] = [];
+  contractForm: FormGroup | any;
+  submit = false;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
     this.contractList.push(
       {
         id: 1,
@@ -19,9 +22,9 @@ export class ContractComponent implements OnInit {
           id: 1,
           name: 'Nguyễn Hoàng Sang',
           birthDay: '08/09/1997',
-          gender: false,
+          gender: 'Nam',
           idCard: '098787676',
-          numberPhone: "09889878",
+          phoneNumber: "09889878",
           email: "huyen1997@gmail.com",
           customerType: "Daimond",
           address: 'Quảng Nam'
@@ -51,9 +54,9 @@ export class ContractComponent implements OnInit {
           id: 1,
           name: 'Trương Ngọc Huyền',
           birthDay: '08/09/1997',
-          gender: false,
+          gender: "Nữ",
           idCard: '098787676',
-          numberPhone: "09889878",
+          phoneNumber: "09889878",
           email: "huyen1997@gmail.com",
           customerType: "Daimond",
           address: 'Quảng Nam'
@@ -83,9 +86,9 @@ export class ContractComponent implements OnInit {
           id: 1,
           name: 'Trần Văn Hải',
           birthDay: '08/09/1997',
-          gender: false,
+          gender: 'Nam',
           idCard: '098787676',
-          numberPhone: "09889878",
+          phoneNumber: "09889878",
           email: "huyen1997@gmail.com",
           customerType: "Daimond",
           address: 'Quảng Nam'
@@ -112,7 +115,23 @@ export class ContractComponent implements OnInit {
     )
   }
 
-  ngOnInit(): void {
+  ngOnChanges(changes: SimpleChanges): void {
+
   }
 
+  dateValidator(Form: AbstractControl) {
+    let dateRegex = new RegExp('^(0?[1-9]|[12][0-9]|3[01])(/)(0?[1-9]|1[012])(/)\d{4}$');
+  }
+
+  ngOnInit(): void {
+    this.contractForm = this.fb.group({
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required],
+      deposit: ['', [Validators.required, Validators.min(0)]]
+    })
+  }
+
+  onSubmit() {
+    this.submit = true;
+  }
 }
