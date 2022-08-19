@@ -1,8 +1,8 @@
-import {Component, OnChanges, OnInit} from '@angular/core';
+import {Component, DoCheck, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {FacilityType} from "../model/facilityType";
 import {FacilityTypeService} from "../service/facility-type-service.service";
-import {RentType} from "../model/RentType";
+import {RentType} from "../model/rent-type";
 import {RentTypeService} from "../service/rent-type.service";
 
 @Component({
@@ -10,14 +10,21 @@ import {RentTypeService} from "../service/rent-type.service";
   templateUrl: './facility-create.component.html',
   styleUrls: ['./facility-create.component.css']
 })
-export class FacilityCreateComponent implements OnInit {
+export class FacilityCreateComponent implements OnInit, DoCheck {
   formGroup: FormGroup | any;
   facilityTypeList: FacilityType[] = [];
   rentTypeList: RentType[] = [];
   submit = false;
+  showCreate: number;
 
   constructor(private fb: FormBuilder, private facilityTypeService: FacilityTypeService, private rentTypeService: RentTypeService) {
+    this.showCreate = 1;
+    this.facilityTypeList = this.facilityTypeService.getAll();
+    this.rentTypeList = this.rentTypeService.getAll();
+  }
 
+  ngDoCheck(): void {
+    this.showCreate = this.formGroup.value.facilityType;
   }
 
   nameValidator(formControl: AbstractControl) {
@@ -35,7 +42,7 @@ export class FacilityCreateComponent implements OnInit {
 
   ngOnInit(): void {
     this.formGroup = this.fb.group({
-      facilityType: ['', Validators.required],
+      facilityType: [this.showCreate, Validators.required],
       name: ['', this.nameValidator],
       area: ['', Validators.required],
       cost: ['', Validators.required],
@@ -47,17 +54,6 @@ export class FacilityCreateComponent implements OnInit {
       numberFloors: ['', [Validators.min(0), Validators.required]],
       facilityFree: ['', Validators.required]
     });
-    this.facilityTypeList = this.facilityTypeService.getAll();
-    this.rentTypeList = this.rentTypeService.getAll();
-  }
-
-  numberValidator(formControl: AbstractControl) {
-    // console.log(formControl.value.indexOf('.'));
-    if (formControl.value.includes('.') || formControl.value.includes(',')) {
-      return {numberValidator: true};
-    } else {
-      return null;
-    }
   }
 
 }

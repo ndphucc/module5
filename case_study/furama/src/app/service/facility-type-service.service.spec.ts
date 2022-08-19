@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FacilityTypeServiceService } from './facility-type-service.service';
+import { FacilityTypeService } from './facility-type-service.service';
 
 describe('FacilityTypeServiceService', () => {
-  let service: FacilityTypeServiceService;
+  let service: FacilityTypeService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FacilityTypeServiceService);
+    service = TestBed.inject(FacilityTypeService);
   });
 
   it('should be created', () => {

@@ -1,4 +1,4 @@
-import {RentType} from "./RentType";
+import {RentType} from "./rent-type";
 import {FacilityType} from "./facilityType";
 
 export interface Facility {

@@ -2,7 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {CustomerService} from "../service/customer-service.service";
 import {Customer} from "../model/customer";
-import {formControl} from "@angular/core/schematics/migrations/typed-forms/util";
+import {CustomerType} from "../model/customer-type";
+import {CustomerTypeService} from "../service/customer-type.service";
 
 @Component({
   selector: 'app-customer-create',
@@ -10,12 +11,13 @@ import {formControl} from "@angular/core/schematics/migrations/typed-forms/util"
   styleUrls: ['./customer-create.component.css']
 })
 export class CustomerCreateComponent implements OnInit {
-  customer: Customer = {};
+  customer: Customer | any;
+  customerTypeList: CustomerType[] = [];
   customerForm: FormGroup | any;
   submit: boolean = false;
 
-  constructor(private fb: FormBuilder, private customerService: CustomerService) {
-
+  constructor(private fb: FormBuilder, private customerService: CustomerService, private customerTypeService: CustomerTypeService) {
+    this.customerTypeList = this.customerTypeService.getAll()
   }
 
   onSubmit() {
@@ -29,7 +31,7 @@ export class CustomerCreateComponent implements OnInit {
         idCard: this.customerForm.value.idCard,
         phoneNumber: this.customerForm.value.phoneNumber,
         email: this.customerForm.value.email,
-        customerType: this.customerForm.value.customerType,
+        customerType: this.customerTypeService.findById(this.customerForm.value.customerType),
         address: this.customerForm.value.address,
       };
       this.customerService.add(this.customer);

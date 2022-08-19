@@ -1,8 +1,10 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Contract} from "../model/contract";
 import {Customer} from "../model/customer";
-import {Facility} from "../model/Facility";
+import {Facility} from "../model/facility";
 import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {CustomerTypeService} from "../service/customer-type.service";
+import {CustomerService} from "../service/customer-service.service";
 
 @Component({
   selector: 'app-contract',
@@ -11,10 +13,13 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from "@angular/form
 })
 export class ContractComponent implements OnInit, OnChanges {
   contractList: Contract[] = [];
+  customerList: Customer[] = [];
+  facilityList: Facility[] = [];
   contractForm: FormGroup | any;
   submit = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private customerTypeService: CustomerTypeService, private customerService: CustomerService) {
+    this.customerList = customerService.getCustomerList();
     this.contractList.push(
       {
         id: 1,
@@ -26,7 +31,7 @@ export class ContractComponent implements OnInit, OnChanges {
           idCard: '098787676',
           phoneNumber: "09889878",
           email: "huyen1997@gmail.com",
-          customerType: "Daimond",
+          customerType: customerTypeService.findById(1),
           address: 'Quảng Nam'
         },
         facility: {
@@ -58,7 +63,7 @@ export class ContractComponent implements OnInit, OnChanges {
           idCard: '098787676',
           phoneNumber: "09889878",
           email: "huyen1997@gmail.com",
-          customerType: "Daimond",
+          customerType: customerTypeService.findById(1),
           address: 'Quảng Nam'
         },
         facility: {
@@ -90,7 +95,7 @@ export class ContractComponent implements OnInit, OnChanges {
           idCard: '098787676',
           phoneNumber: "09889878",
           email: "huyen1997@gmail.com",
-          customerType: "Daimond",
+          customerType: customerTypeService.findById(1),
           address: 'Quảng Nam'
         },
         facility: {

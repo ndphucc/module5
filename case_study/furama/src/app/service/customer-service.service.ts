@@ -2,6 +2,8 @@ import {Injectable} from '@angular/core';
 import {Customer} from "../model/customer";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {CustomerTypeService} from "./customer-type.service";
+import {elementAt} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +11,7 @@ import {Router} from "@angular/router";
 export class CustomerService {
   customerList: Customer[] = [];
 
-  constructor(private fb: FormBuilder,private router:Router) {
+  constructor(private fb: FormBuilder, private router: Router, private customerTypeService: CustomerTypeService) {
     this.customerList.push({
         id: 1,
         name: 'Trương Ngọc Huyền',
@@ -18,7 +20,7 @@ export class CustomerService {
         idCard: '098787676',
         phoneNumber: "09889878",
         email: "huyen1997@gmail.com",
-        customerType: "Daimond",
+        customerType: customerTypeService.findById(1),
         address: 'Quảng Nam'
       },
       {
@@ -29,7 +31,7 @@ export class CustomerService {
         idCard: '098787676',
         phoneNumber: "09889878",
         email: "huyen1997@gmail.com",
-        customerType: "Daimond",
+        customerType: customerTypeService.findById(2),
         address: 'Quảng Nam'
       },
       {
@@ -40,7 +42,7 @@ export class CustomerService {
         idCard: '098787676',
         phoneNumber: "09889878",
         email: "huyen1997@gmail.com",
-        customerType: "Daimond",
+        customerType: customerTypeService.findById(3),
         address: 'Quảng Nam'
       },
       {
@@ -51,7 +53,7 @@ export class CustomerService {
         idCard: '098787676',
         phoneNumber: "09889878",
         email: "huyen1997@gmail.com",
-        customerType: "Daimond",
+        customerType: customerTypeService.findById(1),
         address: 'Quảng Nam'
       },
       {
@@ -62,16 +64,28 @@ export class CustomerService {
         idCard: '098787676',
         phoneNumber: "09889878",
         email: "huyen1997@gmail.com",
-        customerType: "Daimond",
+        customerType: customerTypeService.findById(3),
         address: 'Quảng Nam'
       }
     )
+  }
+
+  findById(id: number) {
+    let index = this.customerList.findIndex(elementAt => elementAt.id == id);
+    return this.customerList[index];
   }
 
   getCustomerList() {
     return this.customerList;
   }
 
+  remove(id: number) {
+    for (let i = 0; i < this.customerList.length; i++) {
+      if (id == this.customerList[i].id) {
+        this.customerList.splice(i, 1);
+      }
+    }
+  }
 
   add(customer: Customer) {
     customer.id = this.getId();
@@ -94,4 +108,10 @@ export class CustomerService {
 
   }
 
+  edit() {
+    // console.log(customerEdit);
+    // let index = this.customerList.findIndex(elementAt => elementAt.id == customerEdit.id);
+    // this.customerList[index] = customerEdit;
+    this.router.navigateByUrl('customer');
+  }
 }

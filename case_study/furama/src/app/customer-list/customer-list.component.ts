@@ -9,14 +9,22 @@ import {CustomerService} from "../service/customer-service.service";
 })
 export class CustomerListComponent implements OnInit {
   customerList: Customer[] = [];
+  customerDelete: Customer | any;
 
-  constructor(private customerService:CustomerService) {
-      this.getCustomerList();
-  }
-  getCustomerList(){
+  constructor(private customerService: CustomerService) {
     this.customerList = this.customerService.getCustomerList();
   }
+
   ngOnInit(): void {
   }
 
+  showModal(item: Customer) {
+    this.customerDelete = item;
+  }
+
+  deleteCustomer() {
+    if (this.customerDelete.id != null) {
+      this.customerService.remove(this.customerDelete.id);
+    }
+  }
 }
