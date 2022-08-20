@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bf9be4c-6ce9-4471-951a-3196c47ea4a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/contract/contract.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/contract/contract.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/contract/contract.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/contract/contract.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/customer-create/customer-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/customer-create/customer-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/customer-create/customer-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/customer-create/customer-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/customer-list/customer-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/customer-list/customer-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/facility-create/facility-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/facility-create/facility-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/facility-create/facility-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/facility-create/facility-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/model/customer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/model/customer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/service/customer-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/service/customer-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_angular_form/exercise/from-register/src/app/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss6_angular_form/exercise/from-register/src/app/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss6_angular_form/exercise/from-register/src/app/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ss6_angular_form/exercise/from-register/src/app/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama/src/app/customer-edit/customer-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama/src/app/customer-edit/customer-edit.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,16 +28,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/codegym/module5",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/codegym/module5&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\codegym\module5\ss2_angular_overview\practice" />
@@ -95,6 +83,7 @@
       <workItem from="1660706752687" duration="221000" />
       <workItem from="1660722941064" duration="143000" />
       <workItem from="1660831143798" duration="104000" />
+      <workItem from="1660956654414" duration="202000" />
     </task>
     <servers />
   </component>

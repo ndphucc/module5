@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row ">
+    <h1 class="d-flex justify-content-center">Edit Customer</h1>
+  </div>
+  <div class="row">
+    <div class="col-1">
+      <a routerLink="/customer">
+        <button class="btn btn-primary">Back</button>
+      </a>
+    </div>
+  </div>
+  <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-12">Name</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input type="text" class="form-control" formControlName="name">
+        <p class="text-danger" *ngIf="customerForm.get('name').errors && (customerForm.get('name').touched||submit)">
+          Do not enter numbers and the first characters must be capitalized!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">Customer type</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <select class="form-control" formControlName="customerType">
+          <option value="" selected>Select Customer Type</option>
+          <option *ngFor="let item of customerTypeList" [value]="item.id">{{item.name}}</option>
+        </select>
+        <p class="text-danger"
+           *ngIf="customerForm.get('customerType').errors && (customerForm.get('customerType').touched||submit)">
+          required!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">Gender</div>
+    </div>
+    <div class="row">
+      <div class="col-1"><span>Female:</span></div>
+      <div class="col-2"><input type="radio" value="Nữ" formControlName="gender"></div>
+      <div class="col-1"><span>Male:</span></div>
+      <div class="col-2"><input type="radio" value="Nam" formControlName="gender"></div>
+      <div class="col-1"><span>Other:</span></div>
+      <div class="col-2"><input type="radio" value="Khác" formControlName="gender"></div>
+      <p class="text-danger" *ngIf="customerForm.get('gender').errors && (customerForm.get('gender').touched||submit)">
+        required!</p>
+    </div>
+    <div class="row">
+      <div class="col-12">Address</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input type="text" class="form-control" formControlName="address">
+        <p class="text-danger"
+           *ngIf="customerForm.get('address').errors && (customerForm.get('address').touched||submit)">
+          required!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">Date of birth</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input type="date" class="form-control" formControlName="birthDay">
+        <p class="text-danger"
+           *ngIf="customerForm.get('birthDay').errors && (customerForm.get('birthDay').touched||submit)">
+          required!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">Email</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input type="text" class="form-control" formControlName="email">
+        <p class="text-danger" *ngIf="customerForm.get('email').errors && (customerForm.get('email').touched||submit)">
+          Invalid email!
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">Id card</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input type="text" class="form-control" formControlName="idCard">
+        <p class="text-danger"
+           *ngIf="customerForm.get('idCard').errors && (customerForm.get('idCard').touched||submit)">
+          Invalid id card</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">Phone number</div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <input type="text" class="form-control" formControlName="phoneNumber">
+        <p class="text-danger"
+           *ngIf="customerForm.get('phoneNumber').errors && (customerForm.get('phoneNumber').touched||submit)">
+          Invalid phone number!
+        </p>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Edit</button>
+      </div>
+    </div>
+  </form>
+</div>

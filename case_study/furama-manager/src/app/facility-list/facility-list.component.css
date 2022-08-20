@@ -1,0 +1,5 @@
+.bg-img {
+  background-image: url("https://www.marriott.com/content/dam/marriott-homepage/brand/LargeBanner_desktop.jpg.transform/mcom-hp-transform-2880x1152/image.jpg");
+  background-size: cover;
+  height: 200px;
+}
