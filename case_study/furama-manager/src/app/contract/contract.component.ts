@@ -1,8 +1,7 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {Contract} from '../model/contract';
 import {Customer} from '../model/customer';
 import {Facility} from '../model/facility';
-import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerTypeService} from '../service/customer-type.service';
 import {CustomerService} from '../service/customer-service.service';
 import {FacilityService} from '../service/facility.service';

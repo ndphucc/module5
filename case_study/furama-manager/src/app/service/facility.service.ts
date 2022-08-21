@@ -177,8 +177,16 @@ export class FacilityService {
       });
   }
 
-  getAll() {
-    return this.facilityList;
+  getAll(page: number) {
+    const list = [];
+    if (page < 0) {
+      return list;
+    }
+    let count = 6;
+    for (let i = page * 6; count > 0 && i < this.facilityList.length; i++, count--) {
+      list.push(this.facilityList[i]);
+    }
+    return list;
   }
 
   add(facility: Facility) {

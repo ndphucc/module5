@@ -51,7 +51,7 @@ export class CustomerEditComponent implements OnInit {
       this.customerEdit.idCard = this.customerForm.value.idCard;
       this.customerEdit.phoneNumber = this.customerForm.value.phoneNumber;
       this.customerEdit.email = this.customerForm.value.email;
-      this.customerEdit.customerType = this.customerTypeService.findById(this.customerForm.value.customerType);
+      this.customerEdit.customerType = this.customerTypeService.findById(parseInt(this.customerForm.value.customerType));
       this.customerEdit.address = this.customerForm.value.address;
       this.customerService.edit();
     }
