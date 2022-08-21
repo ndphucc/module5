@@ -10,19 +10,22 @@
     </div>
   </div>
   <div>
-    <form action="/facility/edit" method="post">
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
       <div>
         <div class="row">
           <div class="col-6">Facility type</div>
         </div>
         <div class="row">
           <div class="col-12">
-            <select class="form-select" name="" onload="onchangeFacility(this.value)"
-                    onchange="onchangeFacility(this.value)">
-              <option value="1">Villa</option>
-              <option value="2">House</option>
-              <option value="3">Room</option>
+            <select class="form-select" name="" formControlName="facilityType" (change)="changeFacilityType($event.target.value)">
+              <ng-container *ngFor="let item of facilityTypeList">
+                <option *ngIf="item" [value]="item.id">{{item.name}}</option>
+              </ng-container>
             </select>
+            <p class="text-danger"
+               *ngIf="formGroup.get('facilityType').errors && (formGroup.get('facilityType').touched||submit)">
+              Required!
+            </p>
           </div>
         </div>
         <div class="row">
@@ -30,70 +33,125 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <input class="form-control" type="text">
+            <input class="form-control" type="text" formControlName="name">
+            <p class="text-danger"
+               *ngIf="formGroup.get('name').errors && (formGroup.get('name').touched||submit)">
+              Invalid name number!
+            </p>
           </div>
         </div>
         <div class="row">
           <div class="col-6">Cost</div>
         </div>
         <div class="row">
-          <div class="col-12"><input type="text" class="form-control"></div>
+          <div class="col-12"><input type="text" class="form-control" formControlName="cost">
+            <p class="text-danger"
+               *ngIf="formGroup.get('cost').errors && (formGroup.get('cost').touched||submit)">
+              Required!
+            </p>
+          </div>
         </div>
         <div class="row">
           <div class="col-6">Area</div>
         </div>
         <div class="row">
-          <div class="col-12"><input class="form-control" type="text"></div>
+          <div class="col-12"><input class="form-control" type="number" formControlName="area">
+            <p class="text-danger"
+               *ngIf="formGroup.get('area').errors && (formGroup.get('area').touched||submit)">
+              Required!
+            </p>
+          </div>
         </div>
         <div class="row">
           <div class="col-6">Max people</div>
         </div>
         <div class="row">
-          <div class="col-12"><input class="form-control" type="text"></div>
+          <div class="col-12"><input class="form-control" type="text" formControlName="maxPeople">
+            <p class="text-danger"
+               *ngIf="formGroup.get('maxPeople').errors && (formGroup.get('maxPeople').touched||submit)">
+              Required!
+            </p></div>
         </div>
         <div class="row">
           <div class="col-6">Rent type</div>
         </div>
         <div class="row">
           <div class="col-12">
-            <select class="form-select" name="" id="">
+            <select class="form-select" name="" id="" formControlName="rentType">
+              <option selected value="">Select rent type</option>
+              <option *ngFor="let item of rentTypeList" [value]="item.id">{{item.name}}</option>
             </select>
+            <p class="text-danger"
+               *ngIf="formGroup.get('rentType').errors && (formGroup.get('rentType').touched||submit)">
+              Required!
+            </p>
           </div>
         </div>
-        <div class="row room">
-          <div class="col-6">Standard room</div>
-        </div>
-        <div class="row room">
-          <div class="col-12"><input type="text" class="room form-control"></div>
-        </div>
-        <div class="row room">
-          <div class="col-6">Description other convenience</div>
-        </div>
-        <div class="row room">
-          <div class="col-12"><input class="room form-control" type="text"></div>
-        </div>
-        <div class="row house room">
-          <div class="col-6">Pool area</div>
-        </div>
-        <div class="row house room">
-          <div class="col-12"><input type="text" class="room house form-control"></div>
-        </div>
-        <div class="row room">
-          <div class="col-6">Number of Floors</div>
-        </div>
-        <div class="row room">
-          <div class="col-12 room"><input type="text" class="room form-control">
+        <ng-container *ngIf="showCreate==1||showCreate==2">
+          <div class="row">
+            <div class="col-6">Standard room</div>
           </div>
-        </div>
-        <div class="row villa house" style="display: none">
-          <div class="col-6">Facility free</div>
-        </div>
-        <div class="row villa house" style="display: none">
-          <div class="col-12"><input type="text" class="villa house form-control">
+          <div class="row">
+            <div class="col-12"><input type="text" class="room form-control" formControlName="standardRoom">
+              <p class="text-danger"
+                 *ngIf="formGroup.get('standardRoom').errors && (formGroup.get('standardRoom').touched||submit)">
+                Required!
+              </p></div>
           </div>
-        </div>
+        </ng-container>
+        <ng-container *ngIf="showCreate==1||showCreate==2">
+          <div class="row">
+            <div class="col-6">Description other convenience</div>
+          </div>
+          <div class="row room">
+            <div class="col-12"><input class="room form-control" type="text" formControlName="description">
+              <p class="text-danger"
+                 *ngIf="formGroup.get('description').errors && (formGroup.get('description').touched||submit)">
+                Required!
+              </p></div>
+          </div>
+        </ng-container >
+        <ng-container *ngIf="showCreate==1">
+          <div class="row">
+            <div class="col-6">Pool area</div>
+          </div>
+          <div>
+            <div class="col-12"><input type="number" class="form-control" formControlName="poolArea">
+              <p class="text-danger"
+                 *ngIf="formGroup.get('poolArea').errors && (formGroup.get('poolArea').touched||submit)">
+                Enter a number greater than zero!
+              </p></div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="showCreate==1||showCreate==2">
+          <div class="row room">
+            <div class="col-6">Number of Floors</div>
+          </div>
+          <div class="row room">
+            <div class="col-12 room"><input type="number" class="room form-control"
+                                            formControlName="numberFloors">
+              <p class="text-danger"
+                 *ngIf="formGroup.get('numberFloors').errors && (formGroup.get('numberFloors').touched||submit)">
+                Enter a number greater than zero!
+              </p>
+            </div>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="showCreate==3">
+          <div class="row">
+            <div class="col-6">Facility free</div>
+          </div>
+          <div>
+            <div class="col-12"><input type="text" class="form-control" formControlName="facilityFree">
+              <p class="text-danger"
+                 *ngIf="formGroup.get('facilityFree').errors && (formGroup.get('facilityFree').touched||submit)">
+                Required!
+              </p>
+            </div>
+          </div>
+        </ng-container>
         <div class="row">
-          <div class="col-6">
+          <div class="col-12" class="d-flex justify-content-end pt-3">
             <button class="btn btn-success">Edit</button>
           </div>
         </div>

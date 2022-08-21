@@ -3,3 +3,6 @@
   background-size: cover;
   height: 200px;
 }
+.facility-item:hover + .detail{
+    display: block;
+}

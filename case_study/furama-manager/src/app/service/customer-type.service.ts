@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {CustomerType} from "../model/customer-type";
+import {CustomerType} from '../model/customer-type';
+
 
 @Injectable({
   providedIn: 'root'
@@ -37,8 +38,9 @@ export class CustomerTypeService {
   }
 
   findById(id: number): any {
+    // tslint:disable-next-line:prefer-for-of
     for (let i = 0; i < this.customerTypeList.length; i++) {
-      if (id == this.customerTypeList[i].id) {
+      if (id === this.customerTypeList[i].id) {
         return this.customerTypeList[i];
       }
     }

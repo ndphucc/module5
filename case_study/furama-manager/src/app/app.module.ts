@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'customerEdit/:id', component: CustomerEditComponent},
   {path: 'facility', component: FacilityListComponent},
   {path: 'facilityAdd', component: FacilityCreateComponent},
-  {path: 'facilityEdit', component: FacilityEditComponent},
+  {path: 'facilityEdit/:id', component: FacilityEditComponent},
   {path: 'contract', component: ContractComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 ];

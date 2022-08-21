@@ -1,8 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Customer} from "../model/customer";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {CustomerTypeService} from "./customer-type.service";
+import {Customer} from '../model/customer';
+import {FormBuilder} from '@angular/forms';
+import {Router} from '@angular/router';
+import {CustomerTypeService} from './customer-type.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +18,8 @@ export class CustomerService {
         birthDay: '08/09/1997',
         gender: 'Nữ',
         idCard: '098787676',
-        phoneNumber: "09889878",
-        email: "huyen1997@gmail.com",
+        phoneNumber: '09889878',
+        email: 'huyen1997@gmail.com',
         customerType: customerTypeService.findById(1),
         address: 'Quảng Nam'
       },
@@ -28,8 +29,8 @@ export class CustomerService {
         birthDay: '08/09/1997',
         gender: 'Nam',
         idCard: '098787676',
-        phoneNumber: "09889878",
-        email: "huyen1997@gmail.com",
+        phoneNumber: '09889878',
+        email: 'huyen1997@gmail.com',
         customerType: customerTypeService.findById(2),
         address: 'Quảng Nam'
       },
@@ -39,8 +40,8 @@ export class CustomerService {
         birthDay: '08/09/1997',
         gender: 'Nam',
         idCard: '098787676',
-        phoneNumber: "09889878",
-        email: "huyen1997@gmail.com",
+        phoneNumber: '09889878',
+        email: 'huyen1997@gmail.com',
         customerType: customerTypeService.findById(3),
         address: 'Quảng Nam'
       },
@@ -48,10 +49,10 @@ export class CustomerService {
         id: 4,
         name: 'Trần Văn Hải',
         birthDay: '08/09/1997',
-        gender: "Nam",
+        gender: 'Nam',
         idCard: '098787676',
-        phoneNumber: "09889878",
-        email: "huyen1997@gmail.com",
+        phoneNumber: '09889878',
+        email: 'huyen1997@gmail.com',
         customerType: customerTypeService.findById(1),
         address: 'Quảng Nam'
       },
@@ -61,16 +62,16 @@ export class CustomerService {
         birthDay: '08/09/1997',
         gender: 'Nam',
         idCard: '098787676',
-        phoneNumber: "09889878",
-        email: "huyen1997@gmail.com",
+        phoneNumber: '09889878',
+        email: 'huyen1997@gmail.com',
         customerType: customerTypeService.findById(3),
         address: 'Quảng Nam'
       }
-    )
+    );
   }
 
   findById(id: number) {
-    let index = this.customerList.findIndex(elementAt => elementAt.id == id);
+    const index = this.customerList.findIndex(elementAt => elementAt.id === id);
     return this.customerList[index];
   }
 
@@ -80,7 +81,7 @@ export class CustomerService {
 
   remove(id: number) {
     for (let i = 0; i < this.customerList.length; i++) {
-      if (id == this.customerList[i].id) {
+      if (id === this.customerList[i].id) {
         this.customerList.splice(i, 1);
       }
     }
@@ -93,24 +94,22 @@ export class CustomerService {
   }
 
   getId() {
-    if (this.customerList.length == 0) {
+    if (this.customerList.length === 0) {
       return 1;
     } else {
-      let id: number = 1;
-      for (let customer of this.customerList) {
-        if (customer.id != undefined && customer.id < id) {
+      let id = 1;
+      for (const customer of this.customerList) {
+        console.log(customer);
+        if (customer.id > id) {
           id = customer.id;
         }
       }
-      return id++;
+      return id + 1;
     }
 
   }
 
   edit() {
-    // console.log(customerEdit);
-    // let index = this.customerList.findIndex(elementAt => elementAt.id == customerEdit.id);
-    // this.customerList[index] = customerEdit;
     this.router.navigateByUrl('customer');
   }
 }

@@ -15,4 +15,4 @@ export interface Facility {
   numberFloors: number;
   facilityFree: string;
   img: string;
-};
+}

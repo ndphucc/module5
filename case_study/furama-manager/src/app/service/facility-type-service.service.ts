@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
-import {FacilityType} from "../model/facilityType";
+import {FacilityType} from '../model/facilityType';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class FacilityTypeService {
-  facilityTypeList: FacilityType[] = []
+  facilityTypeList: FacilityType[] = [];
 
   constructor() {
     this.facilityTypeList.push(
@@ -21,7 +22,7 @@ export class FacilityTypeService {
         id: 3,
         name: 'Room'
       }
-    )
+    );
   }
 
   getAll() {
@@ -29,7 +30,7 @@ export class FacilityTypeService {
   }
 
   findById(id: number) {
-    for (let item of this.facilityTypeList) {
+    for (const item of this.facilityTypeList) {
       if (id === item.id) {
         return item;
       }

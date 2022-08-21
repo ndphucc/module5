@@ -18,6 +18,7 @@ export class CustomerEditComponent implements OnInit {
   customerForm: FormGroup | any;
   submit = false;
 
+  // tslint:disable-next-line:max-line-length
   constructor(private activatedRoute: ActivatedRoute, private customerService: CustomerService, private fb: FormBuilder, private customerTypeService: CustomerTypeService) {
     this.customerTypeList = customerTypeService.getAll();
   }

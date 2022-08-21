@@ -17,7 +17,7 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <select class="form-select" name="" formControlName="facilityType">
+            <select class="form-select" name="" formControlName="facilityType" (change)="changeFacilityType($event.target.value)">
               <ng-container *ngFor="let item of facilityTypeList">
                 <option *ngIf="item" [value]="item.id">{{item.name}}</option>
               </ng-container>
@@ -36,7 +36,7 @@
             <input class="form-control" type="text" formControlName="name">
             <p class="text-danger"
                *ngIf="formGroup.get('name').errors && (formGroup.get('name').touched||submit)">
-              Invalid name number!
+              Invalid name!
             </p>
           </div>
         </div>
@@ -72,6 +72,19 @@
               Required!
             </p></div>
         </div>
+        <ng-container *ngIf="showCreate==1||showCreate==2">
+          <div class="row">
+            <div class="col-6">Standard room</div>
+          </div>
+          <div class="row">
+            <div class="col-12"><input type="text" class="room form-control" formControlName="standardRoom">
+              <p class="text-danger"
+                 *ngIf="formGroup.get('standardRoom').errors && (formGroup.get('standardRoom').touched||submit)">
+                Required!
+              </p>
+            </div>
+          </div>
+        </ng-container>
         <div class="row">
           <div class="col-6">Rent type</div>
         </div>
@@ -87,19 +100,7 @@
             </p>
           </div>
         </div>
-        <ng-container>
-          <div class="row">
-            <div class="col-6">Standard room</div>
-          </div>
-          <div class="row">
-            <div class="col-12"><input type="text" class="room form-control" formControlName="standardRoom">
-              <p class="text-danger"
-                 *ngIf="formGroup.get('standardRoom').errors && (formGroup.get('standardRoom').touched||submit)">
-                Required!
-              </p></div>
-          </div>
-        </ng-container>
-        <ng-container>
+        <ng-container *ngIf="showCreate==1||showCreate==2">
           <div class="row">
             <div class="col-6">Description other convenience</div>
           </div>
@@ -108,10 +109,11 @@
               <p class="text-danger"
                  *ngIf="formGroup.get('description').errors && (formGroup.get('description').touched||submit)">
                 Required!
-              </p></div>
+              </p>
+            </div>
           </div>
-        </ng-container>
-        <ng-container>
+        </ng-container >
+        <ng-container *ngIf="showCreate==1||showCreate==-1">
           <div class="row">
             <div class="col-6">Pool area</div>
           </div>
@@ -123,7 +125,7 @@
               </p></div>
           </div>
         </ng-container>
-        <ng-container>
+        <ng-container *ngIf="showCreate==1||showCreate==2">
           <div class="row room">
             <div class="col-6">Number of Floors</div>
           </div>
@@ -137,7 +139,7 @@
             </div>
           </div>
         </ng-container>
-        <ng-container>
+        <ng-container *ngIf="showCreate==3">
           <div class="row">
             <div class="col-6">Facility free</div>
           </div>
@@ -152,7 +154,7 @@
         </ng-container>
         <div class="row">
           <div class="col-12" class="d-flex justify-content-end pt-3">
-            <button class="btn btn-success">Create</button>
+            <button type="submit" class="btn btn-success">Save</button>
           </div>
         </div>
       </div>

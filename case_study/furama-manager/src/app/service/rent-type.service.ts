@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {RentType} from "../model/rent-type";
+import {RentType} from '../model/rent-type';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RentTypeService {
-  rentTypeList: RentType[] = []
+  rentTypeList: RentType[] = [];
 
   constructor() {
     this.rentTypeList.push(
@@ -25,7 +25,7 @@ export class RentTypeService {
         id: 4,
         name: 'hours'
       },
-    )
+    );
   }
 
   getAll() {
@@ -33,7 +33,7 @@ export class RentTypeService {
   }
 
   findById(id: number) {
-    for (let item of this.rentTypeList) {
+    for (const item of this.rentTypeList) {
       if (id === item.id) {
         return item;
       }

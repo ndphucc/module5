@@ -5,6 +5,8 @@ import {Facility} from '../model/facility';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomerTypeService} from '../service/customer-type.service';
 import {CustomerService} from '../service/customer-service.service';
+import {FacilityService} from '../service/facility.service';
+import {ContractService} from '../service/contract.service';
 
 @Component({
   selector: 'app-contract',
@@ -12,112 +14,17 @@ import {CustomerService} from '../service/customer-service.service';
   styleUrls: ['./contract.component.css']
 })
 export class ContractComponent implements OnInit, OnChanges {
-  contractList: Contract[] = [];
+  contractList: [] = [];
   customerList: Customer[] = [];
   facilityList: Facility[] = [];
   contractForm: FormGroup | any;
   submit = false;
 
-  constructor(private fb: FormBuilder, private customerTypeService: CustomerTypeService, private customerService: CustomerService) {
+  constructor(private fb: FormBuilder, private facilityService: FacilityService, private customerTypeService: CustomerTypeService,
+              private customerService: CustomerService, private contractService: ContractService) {
     this.customerList = customerService.getCustomerList();
-    this.contractList.push(
-      {
-        id: 1,
-        customer: {
-          id: 1,
-          name: 'Nguyễn Hoàng Sang',
-          birthDay: '08/09/1997',
-          gender: 'Nam',
-          idCard: '098787676',
-          phoneNumber: '09889878',
-          email: 'huyen1997@gmail.com',
-          customerType: customerTypeService.findById(1),
-          address: 'Quảng Nam'
-        },
-        facility: {
-          id: 11,
-          facilityType: {id: 1, name: 'Villa'},
-          name: 'Villa Beach Front',
-          area: 25000,
-          cost: 10000000,
-          maxPeople: 10,
-          rentType: {id: 1, name: 'year'},
-          standardRoom: 'vip',
-          description: 'Có hồ bơi',
-          poolArea: 500,
-          numberFloors: 4,
-          facilityFree: 'Có Điện Thoại',
-          img: 'https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768'
-        },
-        startDate: '22/08/2020',
-        endDate: '22/08/2021',
-        deposit: 20000,
-      },
-      {
-        id: 2,
-        customer: {
-          id: 1,
-          name: 'Trương Ngọc Huyền',
-          birthDay: '08/09/1997',
-          gender: 'Nữ',
-          idCard: '098787676',
-          phoneNumber: '09889878',
-          email: 'huyen1997@gmail.com',
-          customerType: customerTypeService.findById(1),
-          address: 'Quảng Nam'
-        },
-        facility: {
-          id: 11,
-          facilityType: {id: 1, name: 'Villa'},
-          name: 'Villa Beach Front',
-          area: 25000,
-          cost: 10000000,
-          maxPeople: 10,
-          rentType: {id: 1, name: 'year'},
-          standardRoom: 'vip',
-          description: 'Có hồ bơi',
-          poolArea: 500,
-          numberFloors: 4,
-          facilityFree: 'Có Điện Thoại',
-          img: 'https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768'
-        },
-        startDate: '22/08/2020',
-        endDate: '22/08/2021',
-        deposit: 20000,
-      },
-      {
-        id: 3,
-        customer: {
-          id: 1,
-          name: 'Trần Văn Hải',
-          birthDay: '08/09/1997',
-          gender: 'Nam',
-          idCard: '098787676',
-          phoneNumber: '09889878',
-          email: 'huyen1997@gmail.com',
-          customerType: customerTypeService.findById(1),
-          address: 'Quảng Nam'
-        },
-        facility: {
-          id: 11,
-          facilityType: {id: 1, name: 'Villa'},
-          name: 'Villa Beach Front',
-          area: 25000,
-          cost: 10000000,
-          maxPeople: 10,
-          rentType: {id: 1, name: 'year'},
-          standardRoom: 'vip',
-          description: 'Có hồ bơi',
-          poolArea: 500,
-          numberFloors: 4,
-          facilityFree: 'Có Điện Thoại',
-          img: 'https://pix10.agoda.net/hotelImages/2817185/-1/4406a970306a452300f94532410dab2c.jpg?ca=10&ce=1&s=1024x768'
-        },
-        startDate: '22/08/2020',
-        endDate: '22/08/2021',
-        deposit: 20000,
-      },
-    );
+    this.facilityList = facilityService.getAll();
+    this.contractList = contractService.getAll();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -128,11 +35,23 @@ export class ContractComponent implements OnInit, OnChanges {
     this.contractForm = this.fb.group({
       startDate: ['', Validators.required],
       endDate: ['', Validators.required],
-      deposit: ['', [Validators.required, Validators.min(0)]]
+      deposit: ['', [Validators.required, Validators.min(0)]],
+      customer: ['', Validators.required],
+      facility: ['', Validators.required]
     });
   }
 
   onSubmit() {
     this.submit = true;
+    if (this.contractForm.valid) {
+      document.getElementById('closeModalButton').click();
+      const contract = this.contractForm.value;
+      contract.customer = this.customerService.findById(parseInt(this.contractForm.value.customer));
+      contract.facility = this.facilityService.findById(parseInt(this.contractForm.value.facility));
+      this.contractService.add(contract);
+      this.contractList = this.contractService.getAll();
+      // tslint:disable-next-line:no-unused-expression
+      this.contractForm.reset();
+    }
   }
 }
