@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit() {
+  submit(): void {
     const product = this.productForm.value;
     this.productService.saveProduct(product);
     this.productForm.reset();

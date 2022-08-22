@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
     this.getAll();
   }
 
-  delete() {
+  delete(): void {
     this.categoryService.deleteCategory(this.category.id);
   }
 

@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {CategoryService} from '../category.service';
 import {ActivatedRoute, ParamMap} from '@angular/router';
+import {Observable} from 'rxjs';
+import {Category} from '../../model/category';
 
 @Component({
   selector: 'app-edit',
@@ -32,7 +34,7 @@ export class EditComponent implements OnInit {
     });
   }
 
-  updateCategory(id: number) {
+  updateCategory(id: number): void {
     const category = this.categoryForm.value;
     this.categoryService.updateCategory(id, category).subscribe(() => {
       alert('Cập nhật thành công');

@@ -19,7 +19,7 @@ export class CreateComponent implements OnInit {
   ngOnInit() {
   }
 
-  submit() {
+  submit(): void {
     const category = this.categoryForm.value;
     this.categoryService.saveCategory(category).subscribe(() => {
       this.categoryForm.reset();

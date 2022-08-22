@@ -18,11 +18,15 @@ export class ListComponent implements OnInit {
     this.getAll();
   }
 
-  delete() {
+  delete(): void {
     this.productService.deleteProduct(this.product.id);
   }
 
-  getAll() {
+  getDelete(item: Product): void {
+    this.product = item;
+  }
+
+  getAll(): void {
     this.productService.getAll().subscribe(next => {
       this.products = next;
     });
