@@ -18,7 +18,6 @@ const router: Router = [{
   }
 ];
 
-// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,

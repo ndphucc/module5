@@ -27,11 +27,11 @@ export class DictionaryService {
     );
   }
 
-  getAll() {
+  getAll(): Word[] {
     return this.words;
   }
 
-  finById(id: number) {
+  finById(id: number): Word {
     return this.words.find(element => element.id == id);
   }
 }
