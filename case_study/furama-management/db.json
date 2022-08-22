@@ -1,0 +1,124 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Diamond"
+    },
+    {
+      "id": 2,
+      "name": "Platinum"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Silver"
+    },
+    {
+      "id": 5,
+      "name": "Member"
+    }
+  ],
+  "customer": [
+    {
+      "name": "PhạmXuânDiệu",
+      "birthDay": "1992-08-08",
+      "gender": "Nữ",
+      "idCard": "865342123",
+      "phoneNumber": "09154333333",
+      "email": "xuandieu92@gmail.com",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "address": "K77/22 Thái Phiên, Quảng Trị",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Trương Đình Nghệ",
+      "customerType": {
+        "id": 5,
+        "name": "Member"
+      },
+      "birthDay": "1990-02-27",
+      "gender": "Nam",
+      "idCard": "865342123",
+      "phoneNumber": "0954333333",
+      "email": "nghenhan2702@gmail.com",
+      "address": "K323/12 Ông Ích Khiêm, Vinh"
+    },
+    {
+      "id": 5,
+      "name": "Trương Ngọc Huyền",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "birthDay": "1990-02-27",
+      "gender": "Nam",
+      "idCard": "865342123",
+      "phoneNumber": "0954333333",
+      "email": "nghenhan2702@gmail.com",
+      "address": "K323/12 Ông Ích Khiêm, Vinh"
+    },
+    {
+      "name": "Nhi",
+      "birthDay": "2022-08-12",
+      "gender": "Nữ",
+      "idCard": "189999898",
+      "phoneNumber": "0918797877",
+      "email": "nhi@gmail.com",
+      "address": "Đà Nẵng",
+      "customerType": {
+        "id": 1,
+        "name": "Diamond"
+      },
+      "id": 6
+    },
+    {
+      "name": "Phướccc",
+      "birthDay": "2002-02-02",
+      "gender": "Nam",
+      "idCard": "1920898998",
+      "phoneNumber": "091118978979",
+      "email": "mienphi123@gmail.com",
+      "customerType": {
+        "id": 2,
+        "name": "Platinum"
+      },
+      "address": "Huế",
+      "id": 7
+    }
+  ],
+  "rentType": [
+    {
+      "id": 1,
+      "name": "Year"
+    },
+    {
+      "id": 2,
+      "name": "Month"
+    },
+    {
+      "id": 3,
+      "name": "Day"
+    },
+    {
+      "id": 4,
+      "name": "Hour"
+    }
+  ],
+  "facilityType": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    }
+  ]
+}
