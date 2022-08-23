@@ -9,54 +9,48 @@ import {FacilityService} from '../facility.service';
   styleUrls: ['./facility-list.component.css']
 })
 export class FacilityListComponent implements OnInit {
-
-  constructor(private facilityService: FacilityService) {
-    this.facilityList = facilityService.getPage(0);
-    this.check();
-  }
-  page = 0;
+  page = 1;
   facilityList: Facility[] = [];
   facilityDelete: Facility;
   detail = -1;
   next = false;
   previous = false;
 
+  constructor(private facilityService: FacilityService) {
+    this.getPage();
+  }
+
+  getPage() {
+    this.check();
+    this.facilityService.getPage(this.page).subscribe(next => {
+      this.facilityList = next;
+    });
+  }
+
   nextPage() {
     this.page = this.page + 1;
-    this.facilityList = this.facilityService.getPage(this.page);
-    this.check();
+    this.getPage();
   }
 
   previousPage() {
     this.page = this.page - 1;
-    this.facilityList = this.facilityService.getPage(this.page);
-    this.check();
+    this.getPage();
   }
 
   check() {
-    if (this.facilityService.getPage(this.page + 1).length === 0) {
-      this.next = false;
-    } else {
-      this.next = true;
-    }
-    if (this.facilityService.getPage(this.page - 1).length === 0) {
-      this.previous = false;
-    } else {
-      this.previous = true;
-    }
-    console.log(this.next);
-    console.log(this.previous);
-  }
-
-  getFacility(id: number) {
-    this.facilityDelete = this.facilityService.findById(id);
+    this.facilityService.getPage(this.page + 1).subscribe(list => {
+      this.next = list.length !== 0;
+      this.previous = this.page > 1;
+    });
   }
 
   ngOnInit(): void {
   }
 
   remove() {
-    this.facilityService.remove(this.facilityDelete.id);
+    this.facilityService.remove(this.facilityDelete.id).subscribe(next => {
+      this.getPage();
+    });
   }
 
   showDetail(id: number) {
@@ -65,5 +59,9 @@ export class FacilityListComponent implements OnInit {
     } else {
       this.detail = id;
     }
+  }
+
+  getFacility(item: Facility) {
+    this.facilityDelete = item;
   }
 }

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c2a71665-9028-444a-acb9-89160e1a5092" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/contract/contract-list/contract.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/contract/contract-list/contract.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/contract/contract.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/contract/contract.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-create/customer-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-create/customer-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-create/customer-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-create/customer-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-edit/customer-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-edit/customer-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/customer/customer-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-create/facility-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-create/facility-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-create/facility-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-create/facility-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-edit/facility-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-edit/facility-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-edit/facility-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-edit/facility-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-list/facility-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-list/facility-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-list/facility-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility-list/facility-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/facility/facility.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/contract.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/customer-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/customer-type.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/customer-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/service/customer-type.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/facility-type-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/facility-type-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/service/facility-type-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/facility.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/rent-type.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/app/service/rent-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/app/service/rent-type.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../furama-management/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../furama-management/src/index.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DjfWiemStPhYOYwKLTVBtw2coB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/codegym/module5/case_study/back_end/furama_back_end/furama_back_end",
+    "spring.configuration.checksum": "fe5def3d66c75858c48d01b7948e07e5"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\codegym\module5\case_study\back_end\back_end\src\main\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="rest_controler" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="back_end.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.back_end.BackEndApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c2a71665-9028-444a-acb9-89160e1a5092" name="Changes" comment="" />
+      <created>1661217448279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1661217448279</updated>
+      <workItem from="1661217451030" duration="2269000" />
+      <workItem from="1661219770091" duration="295000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

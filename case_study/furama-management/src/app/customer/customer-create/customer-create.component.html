@@ -4,7 +4,7 @@
   </div>
   <div class="row">
     <div class="col-1">
-      <a routerLink="/customer">
+      <a routerLink="/customer/list">
         <button class="btn btn-primary">Back</button>
       </a>
     </div>
@@ -17,7 +17,7 @@
       <div class="col-12">
         <input type="text" class="form-control" formControlName="name">
         <p class="text-danger" *ngIf="customerForm.get('name').errors && (customerForm.get('name').touched||submit)">
-          Do not enter numbers and the first characters must be capitalized!
+          Invalid Name!
         </p>
       </div>
     </div>
@@ -113,3 +113,21 @@
     </div>
   </form>
 </div>
+<button id="myBtn" hidden></button>
+<div class="toast" role="alert" aria-live="assertive" [hidden]="false">
+  <div class="toast-header">
+    <strong class="me-auto">Bootstrap</strong>
+    <small class="text-muted">just now</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    See? Just like this.
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $("#myBtn").click(function () {
+      $(".toast").toast("show");
+    });
+  });
+</script>

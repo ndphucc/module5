@@ -6,7 +6,7 @@
   </div>
   <div class="row">
     <div class="col-1 pt-3">
-      <a routerLink="/facilityAdd">
+      <a routerLink="/facility/create">
         <button class="btn btn-primary">Create</button>
       </a>
     </div>
@@ -24,60 +24,64 @@
             <div class="card-body">
               <h5 class="card-title">{{item.name}}</h5>
               <p class="card-text">{{item.area}}</p>
-              <table *ngIf="detail == item.id" class="mb-3">
+              <table *ngIf="detail == item.id" class="mb-3" cellpadding="5px">
                 <tr>
-                  <th>Cost</th>
+                  <th>Facility type:</th>
+                  <td>{{item.facilityType.name}}</td>
+                </tr>
+                <tr>
+                  <th>Cost:</th>
                   <td>{{item.cost}}</td>
                 </tr>
                 <tr>
-                  <th>Max people</th>
+                  <th>Max people:</th>
                   <td>{{item.maxPeople}}</td>
                 </tr>
                 <tr>
-                  <th>Rent type</th>
+                  <th>Rent type:</th>
                   <td>{{item.rentType.name}}</td>
                 </tr>
                 <ng-container *ngIf="item.standardRoom">
                   <tr>
-                    <th>Standard Room</th>
+                    <th>Standard Room:</th>
                     <td>{{item.standardRoom}}</td>
                   </tr>
                 </ng-container>
                 <ng-container *ngIf="item.description">
                   <tr>
-                    <th>Description</th>
+                    <th>Description:</th>
                     <td>{{item.description}}</td>
                   </tr>
                 </ng-container>
                 <ng-container *ngIf="item.poolArea">
                   <tr>
-                    <th>Pool area</th>
+                    <th>Pool area:</th>
                     <td>{{item.poolArea}}</td>
                   </tr>
                 </ng-container>
                 <ng-container *ngIf="item.numberFloors">
                   <tr>
-                    <th>Number floors</th>
+                    <th>Number floors:</th>
                     <td>{{item.numberFloors}}</td>
                   </tr>
                 </ng-container>
                 <ng-container *ngIf="item.facilityFree">
                   <tr>
-                    <th>Facility free</th>
+                    <th>Facility free:</th>
                     <td>{{item.facilityFree}}</td>
                   </tr>
                 </ng-container>
               </table>
               <div class="row">
                 <div class="col-4 d-flex justify-content-center">
-                  <button class="btn btn-primary" [textContent]="detail==item.id?'Close':'Detail'"
+                  <button class="btn btn-info" [textContent]="detail==item.id?'Close':'Detail'"
                           (click)="showDetail(item.id)"></button>
                 </div>
                 <div class="col-4 d-flex justify-content-center">
-                  <a [routerLink]="['/facilityEdit',item.id]" class="btn btn-primary">Edit</a>
+                  <a [routerLink]="['/facility/edit',item.id]" class="btn btn-primary">Edit</a>
                 </div>
                 <div class="col-4 d-flex justify-content-center">
-                  <div (click)="getFacility(item.id)" class="btn btn-danger" data-bs-toggle="modal"
+                  <div (click)="getFacility(item)" class="btn btn-danger" data-bs-toggle="modal"
                        data-bs-target="#deleteModal">Delete
                   </div>
                 </div>
@@ -96,11 +100,13 @@
             <button *ngIf="previous" class="page-link" tabindex="-1"  (click)="previousPage()">Previous</button>
           </li>
           <li *ngIf="previous" class="page-item">
-            <button class="page-link" (click)="previousPage()">{{page}}</button>
+            <button class="page-link" (click)="previousPage()">{{page - 1}}</button>
           </li>
-          <li class="page-item"><button style="background-color: #e9ecef" class="page-link">{{page + 1}}</button></li>
+          <li class="page-item">
+            <button style="background-color: #e9ecef" class="page-link">{{page}}</button>
+          </li>
           <li *ngIf="next" class="page-item">
-            <button class="page-link" (click)="nextPage()">{{page + 2}}</button>
+            <button class="page-link" (click)="nextPage()">{{page + 1}}</button>
           </li>
           <li class="page-item ">
             <button class="page-link" *ngIf="next" (click)="nextPage()">Next</button>

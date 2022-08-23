@@ -5,6 +5,7 @@ import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/form
 import {CustomerService} from '../customer-service.service';
 import {CustomerTypeService} from '../../service/customer-type.service';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-customer-create',
@@ -18,8 +19,9 @@ export class CustomerCreateComponent implements OnInit {
   submit = false;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private fb: FormBuilder, private customerService: CustomerService, private customerTypeService: CustomerTypeService, private router: Router) {
+  constructor(private toastr: ToastrService, private fb: FormBuilder, private customerService: CustomerService, private customerTypeService: CustomerTypeService, private router: Router) {
     this.getCustomerType();
+    console.log(router.url);
   }
 
   getCustomerType() {
@@ -32,19 +34,13 @@ export class CustomerCreateComponent implements OnInit {
     this.submit = true;
     console.log(this.customerForm);
     if (this.customerForm.valid) {
-      this.customer = {
-        name: this.customerForm.value.name,
-        birthDay: this.customerForm.value.birthDay,
-        gender: this.customerForm.value.gender,
-        idCard: this.customerForm.value.idCard,
-        phoneNumber: this.customerForm.value.phoneNumber,
-        email: this.customerForm.value.email,
-        address: this.customerForm.value.address,
-      };
+      this.customer = this.customerForm.value;
       this.customerTypeService.findById(+this.customerForm.value.customerType).subscribe(next => {
         this.customer.customerType = next;
-        this.customerService.add(this.customer).subscribe();
-        this.router.navigateByUrl('/customer/list');
+        this.customerService.add(this.customer).subscribe(success => {
+          this.toastr.success('Thêm mới thành công', '');
+          this.router.navigateByUrl('/customer/list');
+        });
       });
     }
 

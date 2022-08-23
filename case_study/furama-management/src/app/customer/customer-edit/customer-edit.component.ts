@@ -1,10 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {CustomerType} from '../../model/customer-type';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {CustomerService} from '../customer-service.service';
 import {CustomerTypeService} from '../../service/customer-type.service';
+import {ToastrService} from 'ngx-toastr';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class CustomerEditComponent implements OnInit {
   submit = false;
 
   // tslint:disable-next-line:max-line-length
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private customerService: CustomerService, private fb: FormBuilder, private customerTypeService: CustomerTypeService) {
+  constructor(private toastr: ToastrService, private router: Router, private activatedRoute: ActivatedRoute, private customerService: CustomerService, private fb: FormBuilder, private customerTypeService: CustomerTypeService) {
     this.getCustomerType();
   }
 
@@ -63,8 +64,10 @@ export class CustomerEditComponent implements OnInit {
       this.customerTypeService.findById(+this.customerForm.value.customerType).subscribe(next => {
         this.customerEdit.customerType = next;
         this.customerEdit.id = this.idCustomer;
-        this.customerService.edit(this.customerEdit).subscribe();
-        this.router.navigateByUrl('/customer/list');
+        this.customerService.edit(this.customerEdit).subscribe(success => {
+          this.toastr.success('Sửa thành công');
+          this.router.navigateByUrl('/customer/list');
+        });
       });
     }
   }

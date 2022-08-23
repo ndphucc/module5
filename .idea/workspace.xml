@@ -3,81 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="5bf9be4c-6ce9-4471-951a-3196c47ea4a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/db.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/category-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/category.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/category.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/category.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/create/create.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/create/create.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/create/create.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/create/create.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/edit/edit.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/edit/edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/edit/edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/edit/edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/list/list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/list/list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/list/list.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/category/list/list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/model/category.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/model/product.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/create/create.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/create/create.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/create/create.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/create/create.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/edit/edit.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/edit/edit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/edit/edit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/edit/edit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/list/list.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/list/list.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/list/list.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/list/list.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/prodcut.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/product-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/product.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/app/product/product.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/prduct-management/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/e2e/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ss7_service_router/exercise/product-management/karma.conf.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/contract/contract.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/contract/contract.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/customer/customer-create/customer-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/customer/customer-create/customer-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/customer/customer-create/customer-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/customer/customer-create/customer-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-create/facility-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-create/facility-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-create/facility-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-create/facility-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-edit/facility-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-edit/facility-edit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-edit/facility-edit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-edit/facility-edit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-list/facility-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-list/facility-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-list/facility-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility-list/facility-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/facility/facility.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/contract.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/customer-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/customer-type.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/customer-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/service/customer-type.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/facility-type-service.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/facility-type-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/service/facility-type-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/facility.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/rent-type.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/app/service/rent-type.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/app/service/rent-type.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case_study/furama-management/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama-management/src/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +54,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/codegym/module5/case_study/furama-management",
+    "last_opened_file_path": "D:/codegym/module5/case_study/back_end",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -167,6 +113,8 @@
       <workItem from="1661140494041" duration="477000" />
       <workItem from="1661176536042" duration="277000" />
       <workItem from="1661177738831" duration="69000" />
+      <workItem from="1661204594262" duration="603000" />
+      <workItem from="1661205480636" duration="840000" />
     </task>
     <servers />
   </component>

@@ -4,7 +4,7 @@
   </div>
   <div class="row">
     <div class="col-1">
-      <a routerLink="/customer/link">
+      <a routerLink="/customer/list">
         <button class="btn btn-primary">Back</button>
       </a>
     </div>
@@ -17,7 +17,7 @@
       <div class="col-12">
         <input type="text" class="form-control" formControlName="name">
         <p class="text-danger" *ngIf="customerForm.get('name').errors && (customerForm.get('name').touched||submit)">
-          Do not enter numbers and the first characters must be capitalized!
+          Invalid Name!
         </p>
       </div>
     </div>
