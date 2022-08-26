@@ -1,0 +1,16 @@
+{
+  "benhAn": [
+    {
+      "id": "BA-002",
+      "ngayNhapVien": "2019-08-08",
+      "ngayRaVien": "2019-08-29",
+      "lyDo": "Ho",
+      "phuongPhapDieuTri": "Mổ abc",
+      "bacSiDieuTri": "Lê Văn B",
+      "benhNhan": {
+        "id": "BN-132",
+        "ten": "Nguyễn Văn Bốn"
+      }
+    }
+  ]
+}
